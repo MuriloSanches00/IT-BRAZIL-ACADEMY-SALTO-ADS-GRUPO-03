@@ -1,3 +1,4 @@
+//CÓDIGO PARCIAL DO MAQUEEN
 #define in1 6 //  motor 1
 #define in2 5 //  motor 1
 #define in3 11 // motor 2
@@ -19,3 +20,5 @@ void loop() {
   if (Serial.available() > 0) { // Entrada bluetooth.
     time1 = millis(); // A variavel time1 salva o tempo em que o bluetooth enviou dados da ultima vez
     digitalWrite(2, HIGH); // 	Led de conexão ativa
+}
+
