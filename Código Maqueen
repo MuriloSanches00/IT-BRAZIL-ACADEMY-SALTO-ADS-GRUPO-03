@@ -1,0 +1,21 @@
+#define in1 6 //  motor 1
+#define in2 5 //  motor 1
+#define in3 11 // motor 2
+#define in4 10 // motor 2
+int dataIn[5] {0,0,0,0}; // recepção de dados do aplicativo
+int in_byte = 0; // Recpção em Bytes
+int array_index = 0; // Indice do vetor 
+int X, Y, button, velMotor; // Coordenadas , botão  e a variavel de velocidade
+unsigned long time1; // Variavel auxiliar para guardar tempo
+void setup() {
+Serial.begin(9600);  
+pinMode(in1, OUTPUT);
+pinMode(in2, OUTPUT);
+pinMode(in3, OUTPUT);
+pinMode(in4, OUTPUT);
+pinMode(2, OUTPUT); // Led
+}
+void loop() {
+  if (Serial.available() > 0) { // Entrada bluetooth.
+    time1 = millis(); // A variavel time1 salva o tempo em que o bluetooth enviou dados da ultima vez
+    digitalWrite(2, HIGH); // 	Led de conexão ativa
